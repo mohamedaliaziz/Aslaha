@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+   font-family: "lamar";
+   src: url("../assets/lamar.otf");
+   font-weight: 400;
+}
+/* ------------- Start Global ------------- */
+::-webkit-scrollbar {
+   width: 10px;
+}
+::-webkit-scrollbar-track {
+   background-color: #ccc;
+}
+::-webkit-scrollbar-thumb {
+   background-color: var(--main-color);
+}
+:root {
+   --main-color: #037d73;
+   --foot-color: #04867c;
+   --orang-color: #fdb245;
+   --green-light: #85be9e;
+   --color-black: #000000;
+   --color-white: #ffffff;
+   --light-color: #c4c4c4;
+   --lamar-font: lamar, sans-serif;
+   --transition: all 0.5s;
+}
+body {
+   font-family: "Cairo", sans-serif;
+}
+a {
+   text-decoration: none;
+   transition: var(--transition);
+}
+
+.btn-main {
+   color: var(--color-white);
+   border-radius: 15px;
+   border: none;
+   outline: none;
+   font-weight: 600;
+}
+:is(.btn-green, .btn-orrange):hover {
+   background-image: linear-gradient(
+      to right,
+      rgb(0 0 0 / 0.1),
+      rgb(0 0 0 /0.2)
+   );
+}
+.btn-green {
+   background-color: var(--green-light);
+   padding: 0.2rem 2rem;
+   font-size: 24px;
+}
+.btn-orrange {
+   background-color: var(--orang-color);
+   font-size: 30px;
+   padding: 0.1rem 5rem;
+}
+.main-title h2 {
+   font-family: var(--lamar-font);
+   font-size: calc(42 / 16 * 1rem);
+   letter-spacing: 2px;
+   color: var(--main-color);
+}
+section:not(header section) {
+   padding: 75px 0;
+}
+section:not(header section) .main-title h2 {
+   padding-bottom: 50px;
+}
+/* ------------- Start Fixed ------------- */
+#goTop {
+   background-color: var(--foot-color);
+   color: #fff;
+   cursor: pointer;
+   width: 35px;
+   height: 35px;
+   border-radius: 50%;
+   display: grid;
+   place-content: center;
+   font-size: 20px;
+   z-index: 99999;
+}
+/* ------------- Start NavBar ------------- */
+.navbar {
+   background-color: var(--main-color);
+}
+@media (min-width:992px) {
+   .navbar {
+      height: 80px;
+   }
+}
+.navbar .navbar-brand {
+   color: var(--orang-color);
+   font-size: 2.6rem;
+   font-family: var(--lamar-font);
+}
+.navbar .nav-link {
+   color: var(--color-white) !important;
+   margin: 0 0.2rem;
+   font-size: calc(20 / 16 * 1rem);
+   font-weight: 300;
+   letter-spacing: 1.5px;
+   position: relative;
+   cursor: pointer;
+   transition: var(--transition);
+}
+:is(a, .nav-link):hover {
+   color: var(--orang-color) !important;
+}
+.navbar .nav-link.active {
+   font-family: var(--lamar-font);
+}
+.navbar .nav-link::after {
+   content: "";
+   position: absolute;
+   top: 95%;
+   left: 0;
+   width: 0;
+   height: 4px;
+   background-color: var(--orang-color);
+   border-radius: 3px;
+   transition: var(--transition);
+}
+.navbar .nav-link.active::after {
+   width: 100%;
+   right: 0;
+}
+/* ------------- Start Header ------------- */
+header {
+   min-height: calc(100vh - 80px);
+   background: url("../assets/images/header.png") no-repeat ;
+   background-size: 100% 100%;
+}
+
+header h1 {
+   font-family: var(--lamar-font);
+   font-size: calc(56 / 16 * 1rem);
+}
+header p {
+   font-weight: 500;
+   font-size: calc(35 / 16 * 1rem);
+}
+/* ------------- Start slider ------------- */
+.swiper {
+   width: 100%;
+   height: 100%;
+   text-align: center;
+}
+.swiper .swiper-slide {
+   padding: 4rem 0.2rem;
+}
+.swiper .swiper-slide .item {
+   padding: 2rem 0;
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+   cursor: pointer;
+}
+.swiper .swiper-pagination-bullet {
+   width: 10px;
+   height: 10px;
+}
+.swiper .swiper-pagination-bullet-active {
+   background-color: var(--orang-color);
+}
+.swiper .swiper-pagination {
+   bottom: 0;
+}
+/* ------------- Start about ------------- */
+.about-content p {
+   font-size: 28px;
+   width: clamp(300px , 70% , 100%)
+}
+/* ------------- Start message ------------- */
+.meesage {
+   background-color: var(--main-color);
+}
+.meesage h2 {
+   font-size: 40px;
+   font-weight: 800;
+}
+.meesage p {
+   font-size: 24px;
+   font-weight: 700;
+}
+/* ------------- Start why ------------- */
+.why-content .image {
+   width: 150px;
+   height: 150px;
+   display: grid;
+   place-content: center;
+   border-radius: 50%;
+   box-shadow: 0 2px 16px 1px #04867c;
+   margin: 20px auto;
+}
+/* ------------- Start active ------------- */
+.active-page .img-play {
+   width: 85px;
+   height: 85px;
+}
+.active-page .image {
+   width: 140px;
+   height: 140px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: var(--color-white);
+   box-shadow: 0 2px 5px var(--orang-color);
+   cursor: pointer;
+}
+/* ------------- Start Say ------------- */
+.mySwiper2 {
+   background-color: var(--main-color);
+}
+.mySwiper2 .swiper-slide {
+   cursor: pointer;
+}
+.mySwiper2 .swiper-slide::before,
+.mySwiper2 .swiper-slide::after {
+   position: absolute;
+   text-rendering: auto;
+   font: var(--fa-font-solid);
+   font-size: 90px;
+}
+.mySwiper2 .swiper-slide::before {
+   content: "\f10d";
+   bottom: 15%;
+   left: 10%;
+}
+.mySwiper2 .swiper-slide::after {
+   content: "\f10e";
+   top: 15%;
+   right: 10%;
+}
+@media screen and (max-width: 563.98px) {
+   .mySwiper2 .swiper-slide::before,
+   .mySwiper2 .swiper-slide::after {
+      all: unset;
+   }
+}
+/* ------------- Start contact ------------- */
+.contact-us {
+   overflow-x: hidden;
+}
+.contact-us .images {
+   position: relative;
+   left: -200px;
+   margin-right: -160px;
+}
+@media screen and (max-width: 991.98px) {
+   .contact-us .images {
+      position: static;
+      margin-right: 0;
+   }
+}
+.contact-us .input-data {
+   border: 1px solid var(--main-color);
+   border-radius: 20px;
+   padding: 10px 20px;
+   margin-bottom: 20px;
+}
+.contact-us .input-data input {
+   all: unset;
+   height: 40px;
+}
+.contact-us .input-data i {
+   font-size: 20px;
+   color: var(--main-color);
+   margin-left: 10px;
+}
+.contact-us .input-data:last-of-type {
+   height: auto;
+}
+.contact-us .input-data textarea {
+   all: unset;
+   width: 100%;
+   resize: vertical;
+}
+/* ------------- Start Footer ------------- */
+footer {
+   background-color: var(--foot-color);
+}
+footer .title h2 {
+   font-family: var(--lamar-font);
+   color: var(--orang-color) !important;
+}
+footer .social a {
+   width: 35px;
+   height: 35px;
+   border-radius: 50%;
+   background-color: var(--color-white);
+   color: var(--main-color);
+   display: inline-grid;
+   place-content: center;
+   margin: 0 5px;
+   font-size: 20px;
+}
+footer a:not(.social a) {
+   font-size: 24px;
+}
+@media screen and (max-width: 563.98px) {
+   :root {
+      font-size: 11px;
+   }
+}
